@@ -32,7 +32,7 @@ export const ProductsTable = () => {
     const uploadFileHandler = () => {
         setTotalQtys(0)
         setTotalValues(0)
-        if (event.target.files?.[0] && event.target.files?.[0].type === 'application/vnd.ms-excel') {
+        if (event.target.files?.[0] && event.target.files?.[0].type === ('application/vnd.ms-excel' && 'text/csv')) {
             Papa.parse(event.target.files?.[0], {
                 complete: function(results) {
                     setFile(results.data)
